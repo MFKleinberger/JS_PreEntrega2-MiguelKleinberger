@@ -1,11 +1,13 @@
-
+// Descripción funcional
 // 1. Armar un primer listado de productos de productos y carbos con las siguientes propiedades: 1. id, 2. Nombre, 3. Carbos, 4. Unidad de medida. OK
 // 2. Preguntar si desea agregar algun producto con un CONFIRM. OK
-// 3. Si es TRUE, entonces promptear la posibilidad de agregar al array "productos" de a uno por vez. Iterar con 2 hasta que confirm es FALSE. OK
-// 4. HORAS de TRAIL: Promptear cuantas horas de Trail. OK
-// 5. CARBO MAX Y MIN: Promptear cuanto es el carbo max y min por hora. Hacerlo con un confirm. "El sugerido es 70 min 90 max. Si está OK, confirme. Sino, pedir que ingrese los valores por PROMPT". NO uso el estándar porque se hace muy largo (Lo establezco como constantes fijas). OK
-// 6. Promptear todas las Horas igual o personalizar. No HACER. 
-// 7. Igual, usar primera hora como igual. Do while para agregar productos y sumar carbos
+// 3. Si es TRUE, entonces promptear la posibilidad de agregar al array "productos" de a uno por vez. Iterar hasta que confirm es FALSE. OK
+// 4. CARBO MAX Y MIN: Promptear cuanto es el carbo max y min por hora. Hacerlo con un confirm. "El sugerido es 70 min 90 max. Si está OK, confirme. Sino, pedir que ingrese los valores por PROMPT". NO uso el estándar porque se hace muy largo (Lo establezco como constantes fijas). OK
+// 5. Crear un "carrito" para agregar alimentos para 1 hora de carrera (un array)
+// 6. Ciclo para agregar productos y sumar carbos hasta superar el máximo de carbos. OK
+// 7. Al final mostrar cómo quedó compuesto el "carrito". Usar eso de mensaje"" y el +-. Cuando haya productos repetidos usar SOME para poner 2 x Gu, por ejemplo. OK (pero me compliqué con el SOME y lo hice con un if y un find)
+
+// /////////////////////////
 
 alert("Bienvenido/a a mi calculadora de alimentación para carreras de trail.\n\nPara cada hora de carrera se estima una necesidad de reposición de 70 a 90 gramos de carbohidratos.");
 
@@ -79,7 +81,7 @@ function mostrarCarrito() {
     }
     let mensajeCarrito = "Carrito actual:\n";
     carrito.forEach(item => {
-        mensajeCarrito += item.cantidad + " x " + item.alimento.nombre + "\n"; /* MK modificado */
+        mensajeCarrito += item.cantidad + " x " + item.alimento.nombre + "\n";
     });
     return mensajeCarrito;
 }
